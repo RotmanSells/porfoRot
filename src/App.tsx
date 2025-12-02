@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,16 +12,7 @@ import KonamiCode from './components/KonamiCode'
 import DynamicFavicon from './components/DynamicFavicon'
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true)
   const [showPerformancePanel, setShowPerformancePanel] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowIntro(false)
-    }, 4000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   // Performance panel toggle (Ctrl+Shift+P or Cmd+Shift+P)
   useEffect(() => {
@@ -41,22 +31,17 @@ function App() {
     <>
       <DynamicFavicon />
       <KonamiCode />
-      {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
-      {!showIntro && (
-        <>
-          <ScrollProgress />
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Projects />
-            <Skills />
-            <Experience />
-            <Contact />
-          </main>
-          {showPerformancePanel && <PerformancePanel />}
-        </>
-      )}
+      <ScrollProgress />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Contact />
+      </main>
+      {showPerformancePanel && <PerformancePanel />}
     </>
   )
 }

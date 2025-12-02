@@ -23,20 +23,14 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center">
-          <motion.div
+          <motion.h1
+            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1
-              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="text-gradient">Ротман</span>
-            </motion.h1>
-          </motion.div>
+            <span className="text-gradient">Ротман</span>
+          </motion.h1>
 
           <motion.p
             className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 font-light"
